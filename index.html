@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimaGlobe - Aksi Iklim dalam Genggaman Anda</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://kit.fontawesome.com/c37960da16.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #111827;
+        }
+        .hero-gradient-text {
+            background: -webkit-linear-gradient(45deg, #2563eb, #14b8a6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        #globe-container {
+            width: 100%;
+            height: 500px;
+            cursor: grab;
+        }
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="src\img\ClimaGlobe 1024x1024.png" alt="logo" width="50" height="50">
+                <h1 class="text-2xl font-bold text-gray-900">ClimaGlobe</h1>
+            </div>
+            <a onclick="Unduh()" class="bg-blue-600 text-white font-bold py-2 px-5 rounded-md hover:bg-blue-700 transition-colors">
+                Unduh Sekarang
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 mt-20">
+            <div class="absolute inset-0 z-0">
+                <div id="globe-container"></div>
+            </div>
+            <div class="relative z-10 text-center p-6 max-w-4xl mx-auto">
+                <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg border border-gray-200/50">
+                    <h2 class="text-4xl md:text-6xl font-black leading-tight mb-4 text-gray-900">
+                        <span class="hero-gradient-text">Aksi Iklim</span> dalam Genggaman Anda
+                    </h2>
+                    <p class="text-lg md:text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
+                        Jelajahi dampak dan solusi perubahan iklim langsung dari smartphone-mu dengan teknologi Augmented Reality & AI Generatif!
+                    </p>
+                    <div class="flex justify-center space-x-4 text-sm font-semibold text-blue-600">
+                        <span>#SDGs13</span>
+                        <span>#TechAI&AR</span>
+                        <span>#NextGenLearning</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="video" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Lihat Cara Kerja ClimaGlobe</h2>
+                <p class="text-gray-600 mb-10 max-w-2xl mx-auto">Tonton demo kami untuk melihat bagaimana ClimaGlobe bekerja melalui AR dan AI Generatif.</p>
+                <div class="max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-200">
+                    <div class="w-full h-full bg-black flex items-center justify-center">
+                         <video class="w-full h-full" controls autoplay playsinline>
+                            <source type="video/mp4" src="src/vid/climaglobe.mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Fitur Unggulan ✨</h2>
+                    <p class="text-gray-600 mt-2">Semua yang Anda butuhkan untuk memahami dan bertindak.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm transform hover:-translate-y-2 transition-transform duration-300 hover:shadow-lg">
+                        <div class="flex items-center justify-center bg-blue-100 text-blue-600 w-16 h-16 rounded-full mb-4">
+                            <i class="fa-solid fa-earth-americas fa-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Globe 3D Interaktif</h3>
+                        <p class="text-gray-600">Analisis dan deteksi isu iklim di seluruh dunia via Augmented Reality dengan kustomisasi globe.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm transform hover:-translate-y-2 transition-transform duration-300 hover:shadow-lg">
+                        <div class="flex items-center justify-center bg-blue-100 text-blue-600 w-16 h-16 rounded-full mb-4">
+                            <i class="fa-solid fa-magnifying-glass-location fa-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Pemindaian Lokasi Lokal</h3>
+                        <p class="text-gray-600">Ketahui risiko & solusi iklim di daerahmu secara spesifik dan relevan.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm transform hover:-translate-y-2 transition-transform duration-300 hover:shadow-lg">
+                         <div class="flex items-center justify-center bg-blue-100 text-blue-600 w-16 h-16 rounded-full mb-4">
+                            <i class="fa-solid fa-comment-dots fa-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">AI Generatif Responsif</h3>
+                        <p class="text-gray-600">Dapatkan penjelasan mendalam dalam 15 topik aksi iklim yang komprehensif.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm transform hover:-translate-y-2 transition-transform duration-300 hover:shadow-lg">
+                        <div class="flex items-center justify-center bg-blue-100 text-blue-600 w-16 h-16 rounded-full mb-4">
+                            <i class="fa-solid fa-volume-high fa-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Narasi Suara</h3>
+                        <p class="text-gray-600">Informasi dibacakan untuk aksesibilitas maksimal dan kemudahan pemahaman.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm transform hover:-translate-y-2 transition-transform duration-300 hover:shadow-lg">
+                        <div class="flex items-center justify-center bg-blue-100 text-blue-600 w-16 h-16 rounded-full mb-4">
+                            <i class="fa-solid fa-book-atlas fa-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Edukasi SDGs</h3>
+                        <p class="text-gray-600">Edukasi perubahan iklim berbasis SDGs terutama poin ke 13: Aksi Iklim.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm transform hover:-translate-y-2 transition-transform duration-300 hover:shadow-lg">
+                        <div class="flex items-center justify-center bg-blue-100 text-blue-600 w-16 h-16 rounded-full mb-4">
+                            <i class="fa-solid fa-mobile-screen fa-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Antarmuka Modern</h3>
+                        <p class="text-gray-600">Dirancang agar ramah pengguna, menarik secara visual, dan sangat interaktif.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-blue-600">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-3xl md:text-5xl font-extrabold leading-tight text-white">
+                    "Informasi Mudah. Solusi Nyata. <br class="hidden md:block" />Bersama Lawan Perubahan Iklim!"
+                </h3>
+            </div>
+        </section>
+
+        <section id="team" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Tim ClimaGlobe</h2>
+                    <p class="text-gray-600 mt-2">Siswa-siswi berbakat dari <span class="text-blue-600 font-semibold">SMK NEGERI 3 PALU</span>.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="text-center">
+                        <div class="w-32 h-32 mx-auto rounded-full bg-gray-200 mb-4 border-4 border-blue-200 flex items-center justify-center overflow-hidden">
+                            <img src="src/img/avatar.webp" alt="tim">
+                        </div>
+                        <p class="text-xl font-bold text-gray-400">Ketua</p>
+                        <h4 class="text-xl font-bold text-gray-900">Leonel Rally Squall</h4>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-32 h-32 mx-auto rounded-full bg-gray-200 mb-4 border-4 border-blue-200 flex items-center justify-center overflow-hidden">
+                            <img src="src/img/avatar.webp" alt="tim">
+                        </div>
+                        <p class="text-xl font-bold text-gray-400">Anggota</p>
+                        <h4 class="text-xl font-bold text-gray-900">Angkasa Prawira Dirgantara</h4>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-32 h-32 mx-auto rounded-full bg-gray-200 mb-4 border-4 border-blue-200 flex items-center justify-center overflow-hidden">
+                            <img src="src/img/avatar.webp" alt="tim">
+                        </div>
+                        <p class="text-xl font-bold text-gray-400">Anggota</p>
+                        <h4 class="text-xl font-bold text-gray-900">Putri Rahmadani</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-50 py-8 border-t border-gray-200">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>ClimaGlobe © 2025 <a href="https://rally19.github.io/" target="_blank" class="hover:underline">Leonel R.S.</a> All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const container = document.getElementById('globe-container');
+        let scene, camera, renderer, globe;
+        let isDragging = false;
+        let previousMousePosition = { x: 0, y: 0 };
+
+        function init() {
+            scene = new THREE.Scene();
+
+            camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.z = 2.5;
+
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            container.appendChild(renderer.domElement);
+
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+            scene.add(ambientLight);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+            directionalLight.position.set(5, 3, 5);
+            scene.add(directionalLight);
+
+            const geometry = new THREE.SphereGeometry(1.5, 64, 64);
+            const textureLoader = new THREE.TextureLoader();
+            const texture = textureLoader.load(
+                'src/img/Earth2kTexture.png',
+                () => {
+                    const material = new THREE.MeshPhongMaterial({ 
+                        map: texture,
+
+                        bumpScale: 0.05,
+                    });
+                    globe = new THREE.Mesh(geometry, material);
+                    scene.add(globe);
+                    animate();
+                },
+                undefined,
+                () => {
+                    console.error('An error occurred loading the texture');
+                    const material = new THREE.MeshPhongMaterial({ color: 0x2563eb });
+                    globe = new THREE.Mesh(geometry, material);
+                    scene.add(globe);
+                    animate();
+                }
+            );
+
+            container.addEventListener('mousedown', onMouseDown);
+            container.addEventListener('mousemove', onMouseMove);
+            container.addEventListener('mouseup', onMouseUp);
+            container.addEventListener('mouseleave', onMouseUp);
+            container.addEventListener('touchstart', onTouchStart, { passive: true });
+            container.addEventListener('touchmove', onTouchMove, { passive: true });
+            container.addEventListener('touchend', onTouchEnd);
+
+            window.addEventListener('resize', onWindowResize, false);
+        }
+
+        function onWindowResize() {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        }
+
+        function onMouseDown(event) {
+            isDragging = true;
+            container.style.cursor = 'grabbing';
+            previousMousePosition.x = event.clientX;
+            previousMousePosition.y = event.clientY;
+        }
+
+        function onMouseMove(event) {
+            if (!isDragging || !globe) return;
+            const deltaX = event.clientX - previousMousePosition.x;
+            const deltaY = event.clientY - previousMousePosition.y;
+
+            globe.rotation.y += deltaX * 0.005;
+            globe.rotation.x += deltaY * 0.005;
+
+            previousMousePosition.x = event.clientX;
+            previousMousePosition.y = event.clientY;
+        }
+
+        function onMouseUp() {
+            isDragging = false;
+            container.style.cursor = 'grab';
+        }
+
+        function onTouchStart(event) {
+            if (event.touches.length === 1) {
+                isDragging = true;
+                previousMousePosition.x = event.touches[0].clientX;
+                previousMousePosition.y = event.touches[0].clientY;
+            }
+        }
+
+        function onTouchMove(event) {
+            if (isDragging && event.touches.length === 1 && globe) {
+                const deltaX = event.touches[0].clientX - previousMousePosition.x;
+                const deltaY = event.touches[0].clientY - previousMousePosition.y;
+
+                globe.rotation.y += deltaX * 0.005;
+                globe.rotation.x += deltaY * 0.005;
+
+                previousMousePosition.x = event.touches[0].clientX;
+                previousMousePosition.y = event.touches[0].clientY;
+            }
+        }
+
+        function onTouchEnd() {
+            isDragging = false;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            if (globe && !isDragging) {
+                globe.rotation.y += 0.0005;
+            }
+            renderer.render(scene, camera);
+        }
+
+        function Unduh() {
+            var fileUrl = "src/downloads/ClimaGlobe.apk";
+
+            fetch(fileUrl, {
+                method: 'HEAD'
+            }).then(response => {
+                if (response.ok) {
+                var link = document.createElement('a');
+                link.href = fileUrl;
+                link.download = 'ClimaGlobe.apk';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                } else {
+                alert("Aplikasi belum di upload");
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+                alert("Terjadi kesalahan saat memeriksa file.");
+            });
+        }
+
+        init();
+    </script>
+
+</body>
+</html>
