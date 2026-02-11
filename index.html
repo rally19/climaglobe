@@ -3,10 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClimaGlobe - Aksi Iklim dalam Genggaman Anda</title>
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>ClimaGlobe - Solusi Aksi Iklim AR & AI | SMK Negeri 3 Palu</title>
+    <meta name="title" content="ClimaGlobe - Solusi Aksi Iklim AR & AI | SMK Negeri 3 Palu">
+    <meta name="description" content="Download ClimaGlobe, aplikasi edukasi perubahan iklim berbasis Augmented Reality dan AI. Jelajahi solusi SDGs 13 langsung dari smartphone Android Anda.">
+    <meta name="keywords" content="ClimaGlobe, Aksi Iklim, Perubahan Iklim, SDGs 13, Augmented Reality, AI Generatif, SMKN 3 Palu, Aplikasi Edukasi Lingkungan">
+    <meta name="author" content="Leonel Rally Squall">
+    <meta name="robots" content="index, follow">
 
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rally19.github.io/">
+    <meta property="og:title" content="ClimaGlobe - Aksi Iklim dalam Genggaman Anda">
+    <meta property="og:description" content="Edukasi perubahan iklim interaktif dengan teknologi AR & AI. Karya siswa SMKN 3 Palu untuk dunia.">
+    <meta property="og:image" content="src/img/ClimaGlobe 1024x1024.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="ClimaGlobe - Aksi Iklim dalam Genggaman Anda">
+    <meta property="twitter:description" content="Jelajahi dampak dan solusi perubahan iklim dengan AR & AI Generatif.">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ClimaGlobe",
+      "operatingSystem": "Android",
+      "applicationCategory": "EducationApplication",
+      "description": "Aplikasi edukasi perubahan iklim menggunakan AR dan AI.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "IDR"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "SMK Negeri 3 Palu"
+      }
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/x-icon" href="src/img/ClimaGlobe 1024x1024.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,44 +51,26 @@
     <script src="https://kit.fontawesome.com/c37960da16.js" crossorigin="anonymous"></script>
 
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #111827;
-        }
-        .hero-gradient-text {
-            background: -webkit-linear-gradient(45deg, #2563eb, #14b8a6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        #globe-container {
-            width: 100%;
-            height: 500px;
-            cursor: grab;
-        }
-        canvas {
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        /* Your existing styles here */
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #111827; }
+        .hero-gradient-text { background: -webkit-linear-gradient(45deg, #2563eb, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        #globe-container { width: 100%; height: 500px; cursor: grab; }
+        canvas { display: block; width: 100%; height: 100%; }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center" aria-label="Main Navigation">
             <div class="flex items-center space-x-3">
-                <img src="src\img\ClimaGlobe 1024x1024.png" alt="logo" width="50" height="50">
-                <h1 class="text-2xl font-bold text-gray-900">ClimaGlobe</h1>
+                <img src="src/img/ClimaGlobe 1024x1024.png" alt="Logo ClimaGlobe - Aplikasi Aksi Iklim" width="50" height="50">
+                <p class="text-2xl font-bold text-gray-900">ClimaGlobe</p>
             </div>
-            <a href="#unduh" class="bg-blue-600 text-white font-bold py-3 px-5 rounded-md hover:bg-blue-700 transition-colors">
+            <a href="#unduh" aria-label="Download ClimaGlobe" class="bg-blue-600 text-white font-bold py-3 px-5 rounded-md hover:bg-blue-700 transition-colors">
                 <i class="fa-solid fa-download fa-2xl"></i>
             </a>
-        </div>
+        </nav>
     </header>
 
     <main>
@@ -63,11 +80,11 @@
             </div>
             <div class="relative z-10 text-center p-6 max-w-4xl mx-auto">
                 <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg border border-gray-200/50">
-                    <h2 class="text-4xl md:text-6xl font-black leading-tight mb-4 text-gray-900">
+                    <h1 class="text-4xl md:text-6xl font-black leading-tight mb-4 text-gray-900">
                         <span class="hero-gradient-text">Aksi Iklim</span> dalam Genggaman Anda
-                    </h2>
+                    </h1>
                     <p class="text-lg md:text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
-                        Jelajahi dampak dan solusi perubahan iklim langsung dari smartphone-mu dengan teknologi Augmented Reality & AI Generatif!
+                        Jelajahi dampak dan solusi perubahan iklim langsung dari smartphone-mu dengan teknologi <strong>Augmented Reality & AI Generatif</strong>!
                     </p>
                     <div class="flex justify-center space-x-4 text-sm font-semibold text-blue-600">
                         <span>#SDGs13</span>
