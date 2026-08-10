@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /img/ANGKASA.jpg
+Disallow: /img/LEONEL.jpg
+Disallow: /img/PUTRI.jpg
+Allow: /
